@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/show_base.css') }}">
+</head>
+<script>
+function close_window() {
+ close();
+ }
+</script>
+
+{% extends 'base.html' %}
+{% block head %}
+<title>Evento {{ event_record["ev_nome"]}} </title>
+{% endblock %}
+
+{% block body %}
+ <div >
+ <h1 style="text-align: left">Evento {{ event_record["ev_nome"]}}</h1>
+ <form action="/show_event/{{ event_record["ev_id"] }}" method="POST">
+     <input type="text" id="ev-id" name="ev-id" hidden value="{{  event_record["ev_id"] }}">
+     <label class="label-l1" >Ano:</label><input class="input-year" maxlength="4" type="text" id="ev_ano" name="ev-ano" value="{{event_record["ev_ano"]}}" ><br>
+     <label class="label-l1" >Mês:</label><input class="input-year" maxlength="4" type="text" id="ev_mes" name="ev-mes" value="{{event_record["ev_mes"]}}" >
+     <label class="label-l1" >Inicio:</label><input class="input-year" maxlength="4" type="text" id="ev_dia_inicio" name="ev-dia-inicio" value="{{event_record["ev_dia_inicio"]}}" >
+     <label class="label-l1" >Mês Fim:</label><input class="input-year" maxlength="4" type="text" id="ev_mes_fim" name="ev-mes-fim" value="{{event_record["ev_mes_fim"]}}" >
+     <label class="label-l1" >Dia Fim:</label><input class="input-year" maxlength="4" type="text" id="ev_dia_fim" name="ev-dia-fim" value="{{event_record["ev_dia_fim"]}}" ><br>
+     <label class="label-l1" >Nome:</label><input class="input-long" maxlength="90" type="text" id="ev_nome" name="ev-nome" value="{{event_record["ev_nome"]}}" ><br>
+     <label class="label-l1" >Tipo:</label><input class="input-long" maxlength="60" type="text" id="ev_tipo" name="ev-tipo" value="{{event_record["ev_tipo"]}}" ><br>
+     <label class="label-l1" >Local:</label><input class="input-long" maxlength="60" type="text" id="ev_local" name="ev-local" value="{{event_record["ev_local"]}}" ><br>
+      <label class="label-l1" >Freguesia:</label><input class="input-long" maxlength="60" type="text" id="ev_freguesia" name="ev-freguesia" value="{{event_record["ev_freguesia"]}}" ><br>
+     <label class="label-l1" >Concelho:</label><input class="input-long" maxlength="60" type="text" id="ev_concelho" name="ev-concelho" value="{{event_record["ev_concelho"]}}" ><br>
+     <label class="label-l1" >Distrito:</label><input class="input-long" maxlength="60" type="text" id="ev_distrito" name="ev-distrito" value="{{event_record["ev_distrito"]}}" ><br>
+     <label class="label-l1" >Link:</label><input class="input-long" maxlength="60" type="text" id="ev_nome_link" name="ev-nome-link" value="{{event_record["ev_nome_link"]}}" ><br>
+{#     <label class="label-l1" >Arquivo:</label><input class="input-long" maxlength="60" type="text" id="ev_arquivo" name="ev-arquivo" value="{{event_record["ev_arquivo"]}}" ><br>#}
+    {% if event_record['ev_arquivo'] == True %}
+        <label class="label-l1" >Arquivo: </label><input type="checkbox" id="ev_arquivo" name="ev-arquivo" checked >
+    {% else:%}
+        <label class="label-l1" >Arquivo: </label><input type="checkbox" id="ev_arquivo" name="ev-arquivo" >
+    {% endif %}
+    {% if event_record['ev_novo'] == True %}
+        <label class="label-l1" >Novo: </label><input type="checkbox" id="ev_novo" name="ev-novo" checked ><br>
+    {% else:%}
+        <label class="label-l1" >Novo: </label><input type="checkbox" id="ev_novo" name="ev-novo" ><br>
+    {% endif %}
+     <br>
+
+     <label>S.E.O:</label> <br> <textarea rows="6" cols="100" class="input-memo" id="nas-obs" name="nas-obs" >{{ event_record['ev_seo'] }}</textarea>
+     <br>
+ <input type="submit" name="ev_save" value="Grava">
+ <input type="submit" name="ev_clone" value="Duplica">
+ <input type="submit" name="ev_close_and_save" onclick=self.close() value="Grava e Fecha">
+ <input type="button" name="ev_close" onclick=self.close() value="Fechar">
+ <input type="submit" name="ev_delete" value="Apaga"><br>
+
+ </form>
+</div>
+{% endblock %}

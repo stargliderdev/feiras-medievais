@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Feiras Medievais</title>
+{% endblock %}
+
+{% block body %}
+        <div >
+
+            {% if eventos_list|length < 1 %}
+            <h4 style="text-align: center">Não existem registos para mostrar</h4>
+            {% else %}
+            <table class="mainTable">
+                <thead >
+                <tr>
+                    <th >Ano</th>
+                    <th >Mês</th>
+                    <th >Inicio</th>
+                    <th >Nome</th>
+                    <th >Localidade</th>
+                    <th >Freguesia</th>
+                    <th >Concelho</th>
+                    <th >Distrito</th>
+                </tr>
+            </thead>
+                {% for n in eventos_list %}
+                    <tr>
+                       <td class="text-number">{{ n[1] }}</td>
+                        <td class="text-number">{{ n[3] }} a {{ n[4] }}</td>
+                        {% if n[13] == 1 %}
+                            <td class="month-jan">{{ n[2] }}</td>
+                        {% elif n[13] == 2 %}
+                            <td class="month-fev">{{ n[2] }}</td>
+                        {% elif n[13] == 3 %}
+                            <td class="month-mar">{{ n[2] }}</td>
+                        {% elif n[13] == 4 %}
+                            <td class="month-abr">{{ n[2] }}</td>
+                        {% elif n[13] == 5 %}
+                            <td class="month-mai">{{ n[2] }}</td>
+                        {% elif n[13] == 6 %}
+                            <td class="month-jun">{{ n[2] }}</td>
+                        {% elif n[13] == 7 %}
+                            <td class="month-jul">{{ n[2] }}</td>
+                        {% elif n[13] == 8 %}
+                            <td class="month-ago">{{ n[2] }}</td>
+                        {% elif n[13] == 9 %}
+                            <td class="month-set">{{ n[2] }}</td>
+                        {% elif n[13] == 10 %}
+                            <td class="month-out">{{ n[2] }}</td>
+                        {% elif n[13] == 11 %}
+                            <td class="month-nov">{{ n[2] }}</td>
+                        {% elif n[13] == 12 %}
+                            <td class="month-dez">{{ n[2] }}</td>
+                        {% else %}
+                            <td class="text-long">{{ n[2] }}</td>
+                        {% endif %}
+                        <td><a href="/show_event/{{ n[0]}}" target="_blank" rel="noopener noreferrer"><label class="label-link">{{ n[6] }}</label></a></td>
+                        <td class="text-long">{{ n[7] }}</td>
+                        <td class="text-long">{{ n[8] }}</td>
+                        <td class="text-long">{{ n[9] }}</td>
+                        <td class="text-long">{{ n[10] }}</td>
+                        {% if n[11] == True %}
+                             <td class="flag">N</td>
+                        {% else %}
+                             <td></td>
+                        {% endif %}
+                        {% if n[12] == True %}
+                             <td class="flag">A</td>
+                        {% else %}
+                             <td></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+            {% endif %}
+        </div>
+{% endblock %}
