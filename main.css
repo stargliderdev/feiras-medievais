@@ -43,8 +43,18 @@ h1{
     font-size: 18px;
     padding-left: 4px;
     cursor: pointer;
-     color: #eeeeff;
-    text-decoration: underline;
+     color: #ffffff;
+    text-decoration: none;
+}
+.label-link-evv {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    padding-left: 4px;
+    cursor: pointer;
+     color: #f8c110;
+    text-decoration: none;
+    background-color: #1f56e3;
 }
 .label-l1 {
     color: #4238ca;
@@ -284,7 +294,7 @@ h1{
     /*-moz-box-sizing: content-box;*/
     box-sizing: content-box;
     /*cursor: pointer;*/
-    padding: 3px 20px;
+    padding: 1px 10px;
     border: 1px solid #018dc4;
     -webkit-border-radius: 3px;
     border-radius: 5px;
@@ -315,39 +325,49 @@ h1{
 }
 .month-fev {
     color: #e0a4b3;
+    font-weight: bold;
 }
 .month-mar {
-    color: #6060b8;
+    color: #b1b1f4;
 }
 .month-abr {
-    color: #ab0000;
+    color: #f55858;
+    font-weight: bold;
 }
 .month-mai {
     color: #ccb08d;
 }
 .month-jun {
-    color: #465cd0;
-	content: "\f073" !important;
-	color: #ff8f22;
-}
+    color: #c0cafb;
+    font-weight: bold;
 }
 .month-jul {
-    color: #9921b3;
+    color: #eb8eff;
 }
 .month-ago {
-    color: #b9b924;
+    color: #fcfc04;
+    font-weight: bold;
 }
 .month-set {
     color: #c03085;
 }
 .month-out {
-    color: #e2095a;
+    color: #de0a59;
+    font-weight: bold;
 }
 .month-nov {
     color: #d58a8f;
 }
 .month-dez {
-    color: #530a1a;
+    color: #ff2254;
+    font-weight: bold;
+}
+.year-on{
+    text-align: right;
+    padding-right: 9px;
+    padding-left: 12px;
+    font-size: 18px;
+    color: #25d257;
 }
 .show_date{
     content: "\f073" !important;

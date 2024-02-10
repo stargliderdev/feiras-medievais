@@ -13,6 +13,10 @@ def index():
     try:
         ano = flask.request.form.get('calendar-year')
         gl.current_year = ano
+        try:
+            mes = int(flask.request.form.get('calendar-mes'))
+        except (TypeError, ValueError):
+            mes = None
     except KeyError:
         ano = gl.current_year
     if flask.request.method == 'POST':
@@ -32,16 +36,20 @@ def index():
             return flask.render_template('index.html', eventos_list=eventos_list, current_year=gl.current_year)
 
         elif not flask.request.form.get('home-btn') is None:
-            eventos_list = crud.eventos_main(gl.current_year)
             """ gera o home"""
+            eventos_list = crud.eventos_main(gl.current_year, mes)
+
             return flask.render_template('index.html', eventos_list=eventos_list, current_year=gl.current_year)
+        elif not flask.request.form.get('recriadores') is None:
+            print('43')
+            dum = dbmain.get_recriadores()
+            return flask.render_template('recriadores.html', ds_list=dum, current_year=gl.current_year)
         elif not flask.request.form.get('pesquisa') is None:
             print('39')
             eventos_list = crud.eventos_pesquisa(flask.request.form.get('pesquisa'))
             return flask.render_template('index.html', eventos_list=eventos_list, current_year=gl.current_year)
-
     else:
-        eventos_list = crud.eventos_main(gl.current_year)
+        eventos_list = crud.eventos_main(gl.current_year, mes)
         return flask.render_template('index.html', eventos_list=eventos_list, current_year=gl.current_year)
 
 

@@ -24,8 +24,15 @@
                 </tr>
             </thead>
                 {% for n in eventos_list %}
+
                     <tr>
-                       <td class="text-number">{{ n[1] }}</td>
+
+                       {% if n[1] == 2024 %}
+                            <td class="year-on">{{ n[1] }}</td>
+                       {% else %}
+                            <td class="text-number">{{ n[1] }}</td>
+                       {% endif %}
+
                         <td class="text-number">{{ n[3] }} a {{ n[4] }}</td>
                         {% if n[13] == 1 %}
                             <td class="month-jan">{{ n[2] }}</td>
@@ -54,7 +61,11 @@
                         {% else %}
                             <td class="text-long">{{ n[2] }}</td>
                         {% endif %}
-                        <td><a href="/show_event/{{ n[0]}}" target="_blank" rel="noopener noreferrer"><label class="label-link">{{ n[6] }}</label></a></td>
+                        {% if n[14] % 2 == 0 %}
+                            <td><a href="/show_event/{{ n[0]}}" target="_blank" rel="noopener noreferrer"><label class="label-link">{{ n[6] }}</label></a></td>
+                        {% else %}
+                            <td><a href="/show_event/{{ n[0]}}" target="_blank" rel="noopener noreferrer"><label class="label-link-evv">{{ n[6] }}</label></a></td>
+                        {% endif %}
                         <td class="text-long">{{ n[7] }}</td>
                         <td class="text-long">{{ n[8] }}</td>
                         <td class="text-long">{{ n[9] }}</td>

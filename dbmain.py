@@ -3,6 +3,8 @@ from flask import Flask, render_template, url_for, request, redirect
 from datetime import datetime
 import psycopg2
 import psycopg2.extras
+
+import crud
 import parameters as gl
 import sys
 
@@ -132,6 +134,11 @@ def get_event_data(ev_id):
     rec_dic['ev_seo'] = seo
 
     return rec_dic
+
+
+def get_recriadores():
+    sql = '''select an_id, an_nome, an_tags, an_pais, an_link from animadores order by an_nome '''
+    return crud.output_query_many(sql)
 
 
 if __name__ == "__main__":

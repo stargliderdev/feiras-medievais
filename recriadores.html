@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Feiras Medievais</title>
+{% endblock %}
+
+{% block body %}
+        <div >
+
+            {% if ds_list|length < 1 %}
+            <h4 style="text-align: center">Não existem registos para mostrar</h4>
+            {% else %}
+            <table class="mainTable">
+                <thead >
+                <tr>
+                    <th class="text-long">Ano</th>
+                    <th class="text-long">Mês</th>
+                    <th class="text-long">Inicio</th>
+                    <th class="text-long">Nome</th>
+                    <th class="text-long">Localidade</th>
+                    <th class="text-long">Freguesia</th>
+                    <th class="text-long">Concelho</th>
+                    <th class="text-long">Distrito</th>
+                </tr>
+            </thead>
+                {% for n in ds_list %}
+                    <tr>
+                       <td class="text-int">{{ n[0] }}</td>
+                       <td class="text-long">{{ n[1] }}</td>
+                       <td class="text-long">{{ n[2] }}</td>
+                        <td class="text-long">{{ n[3] }}</td>
+                        <td> <a href="https://{{ n[4]}}" target="_blank" rel="noopener noreferrer"><label class="label-link">{{ n[4] }}</label></a></td>
+                        <td class="text-long">{{ n[5] }}</td>
+                        <td class="text-long">{{ n[6] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            {% endif %}
+        </div>
+{% endblock %}

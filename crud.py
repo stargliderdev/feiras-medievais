@@ -40,27 +40,30 @@ def execute_query(sql, data=None):
         sys.exit(1)
 
 
-def eventos_main(year=2023):
+def eventos_main(year=2023, mes=None):
     """
     :param year:
     :return:
     """
-    print('eventos main')
     sql = """
         SELECT ev_id,ev_ano, mes_ini.mes_long, ev_dia_inicio, ev_dia_fim,mes_fim.mes_long, ev_nome, ev_local, 
-        ev_freguesia, ev_concelho, ev_distrito, ev_novo,ev_arquivo, ev_mes
+        ev_freguesia, ev_concelho, ev_distrito, ev_novo,ev_arquivo, ev_mes,
+        row_number() over (order by ev_ano, ev_mes, ev_dia_inicio )
         from eventos 
         inner join meses mes_ini on ev_mes=mes_id 
         inner join meses as mes_fim on ev_mes_fim=mes_fim.mes_id 
-        where ev_ano=%s
-        order by ev_ano desc, ev_mes, ev_dia_inicio"""
+        where ev_ano=%s """
+    if not mes is None:
+        sql = sql + ' and ev_mes = ' + str(mes)
+    sql += """ order by ev_ano desc, ev_mes, ev_dia_inicio"""
     eventos_list = output_query_many(sql, (year,))
     return eventos_list
 
 def eventos_novos(year=2023):
     sql = """
         SELECT ev_id,ev_ano, mes_ini.mes_long, ev_dia_inicio, ev_dia_fim,mes_fim.mes_long, ev_nome, ev_local, 
-        ev_freguesia, ev_concelho, ev_distrito, ev_novo,ev_arquivo, ev_mes
+        ev_freguesia, ev_concelho, ev_distrito, ev_novo,ev_arquivo, ev_mes,
+        row_number() over (order by ev_ano, ev_mes, ev_dia_inicio )
         from eventos 
         inner join meses mes_ini on ev_mes=mes_id 
         inner join meses as mes_fim on ev_mes_fim=mes_fim.mes_id 
@@ -75,7 +78,8 @@ def eventos_pesquisa(evento_txt):
     name = '\'%' + evento_txt.lower() + '%\''
     sql = '''
         SELECT ev_id,ev_ano, mes_ini.mes_long, ev_dia_inicio, ev_dia_fim,mes_fim.mes_long, ev_nome, ev_local, ev_freguesia, ev_concelho, ev_distrito
-        , ev_novo,ev_arquivo, ev_mes
+        , ev_novo,ev_arquivo, ev_mes,
+        row_number() over (order by ev_ano, ev_mes, ev_dia_inicio )
         from eventos 
         inner join meses mes_ini on ev_mes=mes_id 
         inner join meses as mes_fim on ev_mes_fim=mes_fim.mes_id 
