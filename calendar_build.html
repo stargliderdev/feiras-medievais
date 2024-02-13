@@ -9,7 +9,7 @@
     <div >
         <div >
             {% if eventos_calendar|length < 1 %}
-            <h1 ><pre> Não existem registos para mostrar</pre></h1>
+            <h2><pre> Não existem registos para mostrar</pre></h2>
             {% else %}
 {#                não tem css#}
             <table >
@@ -17,27 +17,27 @@
                     <tr>
                         {% if n[6] =='-1' %}
 {#                            <td ></td>#}
-                            <td align="center" colspan="2"><h1>{{ n[5] }}</h1></td>
+                            <td align="center" colspan="2" class="h1-month">{{ n[5] }}</td>
                         {% else:%}
                             {% if n[11] ==0 %}
-                                 <td classe="text-long"> <label class="label-month">{{ n[5] }}</label> <br><label class="label-day1" > {{ n[3] }}</label></td>
+                                 <td classe="text-long"> <etiq class="etiq-month">{{ n[5] }}</etiq> <br><etiq class="etiq-day1" > {{ n[3] }}</etiq></td>
                             {% elif n[11] == 1 :%}
-                                <td ><label class="label-month">{{ n[2] }}</label><br><label class="label-day" >{{ n[3] }}</label> e <label class="label-day" >{{ n[4] }}</label></td>
+                                <td ><etiq class="etiq-month">{{ n[2] }}</etiq><br><etiq class="etiq-day" >{{ n[3] }}</etiq> e <etiq class="etiq-day" >{{ n[4] }}</etiq></td>
                             {% else: %}
-                                <td ><label class="label-month">{{ n[2] }}</label><br><label class="label-day" >{{ n[3] }}</label> a <label class="label-day" >{{ n[4] }}</label></td>
+                                <td ><etiq class="etiq-month">{{ n[2] }}</etiq><br><etiq class="etiq-day" >{{ n[3] }}</etiq> a <etiq class="etiq-day" >{{ n[4] }}</etiq></td>
                             {% endif %}
-                            <td class="text-long"><label class="text-event"> {{ n[6] }}</label><br>
+                            <td class="text-long"><etiq class="text-event"> {{ n[6] }}</etiq><br>
                             {% if n[7] != None %}
                                 <a href="https://www.google.pt/maps/place/{{n[7]}}/ " target="_blank" rel="noopener noreferrer">
-                                             <label class="label-link" >{{ n[7] }}</label></a>
+                                             <etiq class="etiq-link" >{{ n[7] }}</etiq></a>
                             {% endif %}
                             {% if n[8] != None %}
                                 <a href="https://www.google.pt/maps/place/{{n[8]}}/ " target="_blank" rel="noopener noreferrer">
-                                             <label class="label-link" >{{ n[8] }}</label></a>
+                                             <etiq class="etiq-link" >{{ n[8] }}</etiq></a>
                             {% endif %}
                             {% if n[9] != None %}
                                 <a href="https://www.google.pt/maps/place/{{n[9]}}/ " target="_blank" rel="noopener noreferrer">
-                                             <label class="label-link" >{{ n[9] }}</label></a>
+                                             <etiq class="etiq-link" >{{ n[9] }}</etiq></a>
                             {% endif %}
                             </td>
 

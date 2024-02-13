@@ -22,32 +22,32 @@ function close_window() {
  <h1 style="text-align: left">Evento {{ event_record["ev_nome"]}}</h1>
  <form action="/show_event/{{ event_record["ev_id"] }}" method="POST">
      <input type="text" id="ev-id" name="ev-id" hidden value="{{  event_record["ev_id"] }}">
-     <label class="label-l1" >Ano:</label><input class="input-year" maxlength="4" type="text" id="ev_ano" name="ev-ano" value="{{event_record["ev_ano"]}}" ><br>
-     <label class="label-l1" >Mês:</label><input class="input-year" maxlength="4" type="text" id="ev_mes" name="ev-mes" value="{{event_record["ev_mes"]}}" >
-     <label class="label-l1" >Inicio:</label><input class="input-year" maxlength="4" type="text" id="ev_dia_inicio" name="ev-dia-inicio" value="{{event_record["ev_dia_inicio"]}}" >
-     <label class="label-l1" >Mês Fim:</label><input class="input-year" maxlength="4" type="text" id="ev_mes_fim" name="ev-mes-fim" value="{{event_record["ev_mes_fim"]}}" >
-     <label class="label-l1" >Dia Fim:</label><input class="input-year" maxlength="4" type="text" id="ev_dia_fim" name="ev-dia-fim" value="{{event_record["ev_dia_fim"]}}" ><br>
-     <label class="label-l1" >Nome:</label><input class="input-long" maxlength="90" type="text" id="ev_nome" name="ev-nome" value="{{event_record["ev_nome"]}}" ><br>
-     <label class="label-l1" >Tipo:</label><input class="input-long" maxlength="60" type="text" id="ev_tipo" name="ev-tipo" value="{{event_record["ev_tipo"]}}" ><br>
-     <label class="label-l1" >Local:</label><input class="input-long" maxlength="60" type="text" id="ev_local" name="ev-local" value="{{event_record["ev_local"]}}" ><br>
-      <label class="label-l1" >Freguesia:</label><input class="input-long" maxlength="60" type="text" id="ev_freguesia" name="ev-freguesia" value="{{event_record["ev_freguesia"]}}" ><br>
-     <label class="label-l1" >Concelho:</label><input class="input-long" maxlength="60" type="text" id="ev_concelho" name="ev-concelho" value="{{event_record["ev_concelho"]}}" ><br>
-     <label class="label-l1" >Distrito:</label><input class="input-long" maxlength="60" type="text" id="ev_distrito" name="ev-distrito" value="{{event_record["ev_distrito"]}}" ><br>
-     <label class="label-l1" >Link:</label><input class="input-long" maxlength="60" type="text" id="ev_nome_link" name="ev-nome-link" value="{{event_record["ev_nome_link"]}}" ><br>
-{#     <label class="label-l1" >Arquivo:</label><input class="input-long" maxlength="60" type="text" id="ev_arquivo" name="ev-arquivo" value="{{event_record["ev_arquivo"]}}" ><br>#}
+     <etiq class="etiq-l1" >Ano:</etiq><input class="input-year" maxlength="4" type="text" id="ev_ano" name="ev-ano" value="{{event_record["ev_ano"]}}" ><br>
+     <etiq class="etiq-l1" >Mês:</etiq><input class="input-year" maxlength="4" type="text" id="ev_mes" name="ev-mes" value="{{event_record["ev_mes"]}}" >
+     <etiq class="etiq-l1" >Inicio:</etiq><input class="input-year" maxlength="4" type="text" id="ev_dia_inicio" name="ev-dia-inicio" value="{{event_record["ev_dia_inicio"]}}" >
+     <etiq class="etiq-l1" >Mês Fim:</etiq><input class="input-year" maxlength="4" type="text" id="ev_mes_fim" name="ev-mes-fim" value="{{event_record["ev_mes_fim"]}}" >
+     <etiq class="etiq-l1" >Dia Fim:</etiq><input class="input-year" maxlength="4" type="text" id="ev_dia_fim" name="ev-dia-fim" value="{{event_record["ev_dia_fim"]}}" ><br>
+     <etiq class="etiq-l1" >Nome:</etiq><input class="input-long" maxlength="90" type="text" id="ev_nome" name="ev-nome" value="{{event_record["ev_nome"]}}" ><br>
+     <etiq class="etiq-l1" >Tipo:</etiq><input class="input-long" maxlength="60" type="text" id="ev_tipo" name="ev-tipo" value="{{event_record["ev_tipo"]}}" ><br>
+     <etiq class="etiq-l1" >Local:</etiq><input class="input-long" maxlength="60" type="text" id="ev_local" name="ev-local" value="{{event_record["ev_local"]}}" ><br>
+      <etiq class="etiq-l1" >Freguesia:</etiq><input class="input-long" maxlength="60" type="text" id="ev_freguesia" name="ev-freguesia" value="{{event_record["ev_freguesia"]}}" ><br>
+     <etiq class="etiq-l1" >Concelho:</etiq><input class="input-long" maxlength="60" type="text" id="ev_concelho" name="ev-concelho" value="{{event_record["ev_concelho"]}}" ><br>
+     <etiq class="etiq-l1" >Distrito:</etiq><input class="input-long" maxlength="60" type="text" id="ev_distrito" name="ev-distrito" value="{{event_record["ev_distrito"]}}" ><br>
+     <etiq class="etiq-l1" >Link:</etiq><input class="input-long" maxlength="60" type="text" id="ev_nome_link" name="ev-nome-link" value="{{event_record["ev_nome_link"]}}" ><br>
+{#     <etiq class="etiq-l1" >Arquivo:</etiq><input class="input-long" maxlength="60" type="text" id="ev_arquivo" name="ev-arquivo" value="{{event_record["ev_arquivo"]}}" ><br>#}
     {% if event_record['ev_arquivo'] == True %}
-        <label class="label-l1" >Arquivo: </label><input type="checkbox" id="ev_arquivo" name="ev-arquivo" checked >
+        <etiq class="etiq-l1" >Arquivo: </etiq><input type="checkbox" id="ev_arquivo" name="ev-arquivo" checked >
     {% else:%}
-        <label class="label-l1" >Arquivo: </label><input type="checkbox" id="ev_arquivo" name="ev-arquivo" >
+        <etiq class="etiq-l1" >Arquivo: </etiq><input type="checkbox" id="ev_arquivo" name="ev-arquivo" >
     {% endif %}
     {% if event_record['ev_novo'] == True %}
-        <label class="label-l1" >Novo: </label><input type="checkbox" id="ev_novo" name="ev-novo" checked ><br>
+        <etiq class="etiq-l1" >Novo: </etiq><input type="checkbox" id="ev_novo" name="ev-novo" checked ><br>
     {% else:%}
-        <label class="label-l1" >Novo: </label><input type="checkbox" id="ev_novo" name="ev-novo" ><br>
+        <etiq class="etiq-l1" >Novo: </etiq><input type="checkbox" id="ev_novo" name="ev-novo" ><br>
     {% endif %}
      <br>
 
-     <label>S.E.O:</label> <br> <textarea rows="6" cols="100" class="input-memo" id="nas-obs" name="nas-obs" >{{ event_record['ev_seo'] }}</textarea>
+     <etiq>S.E.O:</etiq> <br> <textarea rows="6" cols="100" class="input-memo" id="nas-obs" name="nas-obs" >{{ event_record['ev_seo'] }}</textarea>
      <br>
  <input type="submit" name="ev_save" value="Grava">
  <input type="submit" name="ev_clone" value="Duplica">

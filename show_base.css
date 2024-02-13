@@ -53,7 +53,7 @@
 /*.form {*/
 /*    margin-top: 20px;*/
 /*}*/
-/*[class*="label-"]  {*/
+/*[class*="etiq-"]  {*/
 /*  color:#000; font-weight:bold;*/
 /*  font-size: 18px;*/
 /*  padding-right: 5px;*/
@@ -65,15 +65,15 @@
 /*  text-transform: uppercase;*/
 /*  line-height: 18px;*/
 /*}*/
-/*.label-l0{*/
+/*.etiq-l0{*/
 /*  padding-left: 10px; */
 /*}*/
-/*.label-l1 {*/
+/*.etiq-l1 {*/
 /*  color:hsl(30, 80%, 30%); font-weight:bold;*/
 /*  width: 150px;*/
 /*  text-align: right;*/
 /*}*/
-/*.label-l2 {*/
+/*.etiq-l2 {*/
 /*  font-size: 14px;*/
 /*  padding-right: 5px;*/
 /*  color:#1f56e3; font-weight:bold;*/
@@ -81,18 +81,18 @@
 /*  width: 120px; */
 /*  text-align: right; */
 /*}*/
-/*.label-l3{*/
+/*.etiq-l3{*/
 /*  color:#4238ca; font-weight:bold;*/
 /*  font-size: 14px;*/
 /*  padding-right: 10px;*/
 /*  margin: 0 0 0 60px;*/
 /*}*/
-/*.label-l9{*/
+/*.etiq-l9{*/
 /*  color:#4238ca; font-weight:bold;*/
 /*  font-size: 14px;*/
 /*  padding-right: 5px;*/
 /*}*/
-/*.label-tbl {*/
+/*.etiq-tbl {*/
 /*  color:hsl(30, 80%, 30%); font-weight:bold;*/
 /*  width: 220px;*/
 /*  text-align: center;*/

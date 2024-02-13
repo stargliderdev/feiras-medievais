@@ -5,6 +5,7 @@ body, html {
     font-size: 12px;
     font-weight: 400;
     background-color: #06161F;
+    color:#ffffff;
     margin: 8px;
 }
 
@@ -16,15 +17,11 @@ body, html {
 h4 {
     color: #FFFFFF;
 }
-h1{
-    background-color: #bc2e2e;
-}
 .form {
     margin-top: 20px;
 }
 
-
-[class*="label-"] {
+[class*="etiq-"] {
     color: #fff;
     font-weight: bold;
     font-size: 14px;
@@ -34,19 +31,11 @@ h1{
     /*cursor: pointer;*/
     /*background-color: #f0ad4e;*/
 }
-.label-l0 {
+.etiq-l0 {
     padding-left: 10px;
 }
-.label-link {
-    font-family: Tahoma, Geneva, sans-serif;
-    font-weight: normal;
-    font-size: 18px;
-    padding-left: 4px;
-    cursor: pointer;
-     color: #ffffff;
-    text-decoration: none;
-}
-.label-link-evv {
+
+.etiq-link-evv {
     font-family: Tahoma, Geneva, sans-serif;
     font-weight: normal;
     font-size: 18px;
@@ -56,14 +45,14 @@ h1{
     text-decoration: none;
     background-color: #1f56e3;
 }
-.label-l1 {
+.etiq-l1 {
     color: #4238ca;
     font-weight: bold;
     width: 100px;
     text-align: right;
 }
 
-.label-l2 {
+.etiq-l2 {
     font-size: 14px;
     padding-right: 5px;
     color: #1f56e3;
@@ -73,7 +62,7 @@ h1{
     text-align: right;
 }
 
-.label-l3 {
+.etiq-l3 {
     color: #4238ca;
     font-weight: bold;
     font-size: 14px;
@@ -81,7 +70,7 @@ h1{
     margin: 0 0 0 60px;
 }
 
-.label-l9 {
+.etiq-l9 {
     color: #4238ca;
     font-weight: bold;
     font-size: 14px;
@@ -192,56 +181,8 @@ h1{
 	/* width: 100%; */
 }
 
-.label-day {
-    /* display: inline; */
-    background-color: #fcfc02;
-    color: #1f56e3;
-    font-size: 16px;
-    border-radius: 0 0 4px 4px;
-    padding-right: 2px;
-    font-weight: bold;
-    margin: 0 0 0 0px;
-    width: 29px;
-    text-align: center;
-    display: inline-block;
-}
-.label-day1 {
-    /* display: inline; */
-    background-color: #fcfc02;
-    color: #1f56e3;
-    font-size: 18px;
-    border-radius: 0 0 4px 4px;
-    padding-right: 5px;
-    font-weight: bold;
-    margin: 0 0 0 0px;
-    width: 75px;
-    text-align: center;
-    display: inline-block;
-}
-.label-month {
-    /* display: inline; */
-    background-color: #1f56e3;
-    border-radius: 4px 4px 0px 0px;
-    font-size: 14px;
-    font-style: normal;
-    width: 75px;
-    text-align: center;
-    display: inline-block;}
 
-.label-month-sep-1 {
-    display: inline;
-    background-color: #f10d0d;
-    border-radius: 0px 0px 0px 0px;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: bold;
-    width: 300px ;
-    text-align: center;
-    display: inline-block;
-    color: #FFFFFF;
-}
-
-.label-month-sep {
+.etiq-month-sep {
     /*display: inline;*/
     background-color: #f10d0d;
     border-radius: 0px 0px 0px 0px;
@@ -262,31 +203,9 @@ h1{
     padding-left: 12px;
     font-size: 18px;
     color: #eeeeee;
-}.text-long {
-    text-align: left;
-    font-size: 18px;
-    padding-right: 9px;
-    padding-left: 1px;
-        border-bottom: none;
-    border-top: none;
-    border-left: none;
-    border-collapse: collapse;
-    color: #1bc749;
 }
 
-.text-event {
-    font-family: Tahoma, Geneva, sans-serif;
-    text-align: left;
-    font-size: 18px;
-    color: #1bc749;
-    padding-right: 9px;
-    padding-left: 5px;
-    border-bottom: none;
-    border-top: none;
-    border-left: none;
-    border-collapse: collapse;
 
-}
 
 .flag {
     display: inline-block;
@@ -376,10 +295,102 @@ h1{
     font-size: 18px;
 }
 
-
 .show_site {
     content: "\f124" !important;
     color: #ff8f22;
     padding-right: 5px;
     font-size: 18px;
+}
+
+/*classes para a o calendário*/
+.h1-month{
+    background-color: #bc3333;
+    border-radius: 10px 2px 2px 2px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color:white;
+}
+.etiq-link {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    padding-left: 4px;
+    cursor: pointer;
+     color: #ffffff;
+    text-decoration: none;
+}
+.etiq-month {
+    /* display: inline; */
+    background-color: #1f56e3;
+    border-radius: 4px 4px 0px 0px;
+    font-size: 14px;
+    font-style: normal;
+    width: 94px;
+    text-align: center;
+    display: inline-block;
+}
+.text-long {
+    text-align: left;
+    font-size: 18px;
+    padding-right: 9px;
+    padding-left: 1px;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    border-collapse: collapse;
+    color: #1bc749;
+}
+.text-event {
+    font-family: Tahoma, Geneva, sans-serif;
+    text-align: left;
+    font-size: 18px;
+    color: #1bc749;
+    padding-right: 9px;
+    padding-left: 0px;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    border-collapse: collapse;
+}
+
+.etiq-day {
+    /* display: inline; */
+    background-color: #fcfc02;
+    color: #1f56e3;
+    font-size: 16px;
+    border-radius: 0 0 4px 4px;
+    padding-right: 2px;
+    font-weight: bold;
+    margin: 0 0 0 0px;
+    width: 38px;
+    text-align: center;
+    display: inline-block;
+}
+.etiq-day1 {
+    /* display: inline; */
+    background-color: #fcfc02;
+    color: #1f56e3;
+    font-size: 18px;
+    border-radius: 0 0 4px 4px;
+    padding-right: 0px;
+    font-weight: bold;
+    margin: 0 0 0 0px;
+    width: 93px;
+    text-align: center;
+    display: inline-block;
+}
+
+
+.etiq-month-sep-1 {
+    display: inline;
+    background-color: #f10d0d;
+    border-radius: 0px 0px 0px 0px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    width: 300px ;
+    text-align: center;
+    display: inline-block;
+    color: #FFFFFF;
 }
